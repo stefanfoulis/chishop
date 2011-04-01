@@ -1,5 +1,13 @@
 # Django settings for djangopypi project.
-import os
+import os, os.path
+import sys
+
+PROJECT_ROOT = os.path.join(os.path.dirname(__file__), os.pardir)
+
+sys.path.append(PROJECT_ROOT)
+
+DEBUG = False
+TEMPLATE_DEBUG = True
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -14,7 +22,7 @@ DJANGOPYPI_ALLOW_VERSION_OVERWRITE = False
 DJANGOPYPI_RELEASE_UPLOAD_TO = 'dists'
 
 # change to False if you do not want Django's default server to serve static pages
-LOCAL_DEVELOPMENT = True
+SERVE_MEDIA = True
 
 REGISTRATION_OPEN = True
 ACCOUNT_ACTIVATION_DAYS = 7
@@ -52,8 +60,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-here = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
-MEDIA_ROOT = os.path.join(here, 'media')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -92,10 +99,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(os.path.dirname(os.path.dirname(__file__)), "templates"),
+    os.path.join(PROJECT_ROOT, "templates"),
 )
 
 INSTALLED_APPS = (
@@ -108,4 +112,6 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'registration',
     'djangopypi',
+    'haystack',
+    'south',
 )

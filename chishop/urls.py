@@ -8,7 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('')
 
 # Serve static pages.
-if settings.LOCAL_DEVELOPMENT:
+if settings.SERVE_MEDIA:
     urlpatterns += patterns("django.views",
         url(r"^%s(?P<path>.*)$" % settings.MEDIA_URL[1:], "static.serve", {
             "document_root": settings.MEDIA_ROOT}))
