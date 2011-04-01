@@ -1,2 +1,0 @@
-include setup.py README AUTHORS Changelog LICENSE TODO MANIFEST.in
-recursive-include djangopypi/templates *

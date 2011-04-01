@@ -12,7 +12,7 @@ except ImportError:
 chishop = __import__('chishop', {}, {}, [''])
 
 tests_require = [
-    'djangopypi>=0.4',
+    'djangopypi',
     'South==0.7.1',
     'Django>=1.3',
     'django-registration',
@@ -31,7 +31,7 @@ setup(
     url="http://ask.github.com/chishop",
     zip_safe=False,
     install_requires=[
-        'djangopypi>=0.4',
+        'djangopypi',
         'South==0.7.1',
         'Django>=1.3',
         'django-registration',
@@ -40,6 +40,7 @@ setup(
     ],
     dependency_links=[
         'https://bitbucket.org/ubernostrum/django-registration/downloads/django-registration-0.8-alpha-1.tar.gz#egg=django-registration',
+        'https://github.com/disqus/djangopypi/tarball/master#egg=djangopypi',
     ],
     classifiers=[
         "Development Status :: 3 - Alpha",
