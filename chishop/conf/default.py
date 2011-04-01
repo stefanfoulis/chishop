@@ -117,3 +117,4 @@ INSTALLED_APPS = (
 )
 
 HAYSTACK_SITECONF = 'chishop.search_sites'
+HAYSTACK_SEARCH_ENGINE = 'whoosh'
