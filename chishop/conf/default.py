@@ -115,3 +115,5 @@ INSTALLED_APPS = (
     'haystack',
     'south',
 )
+
+HAYSTACK_SITECONF = 'chishop.search_sites'
