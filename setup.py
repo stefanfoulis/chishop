@@ -27,12 +27,12 @@ setup(
         'djangopypi>=0.4',
         'South==0.7.1',
         'Django==1.2.1',
-        'django-registration-0.8-alpha-1',
+        'django-registration',
         'django-haystack',
         'Whoosh',
     ],
     dependency_links=[
-        'https://bitbucket.org/ubernostrum/django-registration/downloads/django-registration-0.8-alpha-1.tar.gz#egg=django-registration-0.8-alpha-1',
+        'https://bitbucket.org/ubernostrum/django-registration/downloads/django-registration-0.8-alpha-1.tar.gz#egg=django-registration',
     ],
     classifiers=[
         "Development Status :: 3 - Alpha",
