@@ -16,11 +16,15 @@ if settings.LOCAL_DEVELOPMENT:
 urlpatterns += patterns("",
     # Admin interface
     url(r'^admin/doc/', include("django.contrib.admindocs.urls")),
-    url(r'^admin/(.*)', admin.site.root),
+    url(r'^admin/', include(admin.site.urls)),
 
     # Registration
     url(r'^accounts/', include('registration.backends.default.urls')),
 
+    url(r'^search/', 'haystack.views.basic_search', {
+        'template': 'djangopypi/search_results.html',
+    }, name='haystack_search'),
+
     # The Chishop
-    url(r'', include("djangopypi.urls"))
+    url(r'', include("djangopypi.urls")),
 )
