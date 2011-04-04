@@ -35,7 +35,7 @@ setup(
         'South==0.7.1',
         'Django>=1.3',
         'django-registration',
-        'django-haystack',
+        'django-haystack>=1.1.0',
         'Whoosh',
     ],
     dependency_links=[
